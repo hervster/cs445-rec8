@@ -2,7 +2,7 @@ package cs445.rec8;
 
 import java.util.Random;
 
-public class SortTiming_hybrid {
+public class SortTimingHybrid {
 
     // Random number generator for shuffling
     private static Random rand = new Random();

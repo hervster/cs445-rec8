@@ -39,7 +39,7 @@ task(runOne, type: JavaExec) {
 // Task for Part Two
 task(runTwo, type: JavaExec) {
 	// Note that this part uses a main class in a package
-	mainClass = 'cs445.rec8.SortTiming_hybrid'
+	mainClass = 'cs445.rec8.SortTimingHybrid'
 	classpath = sourceSets.main.runtimeClasspath
 }
 
