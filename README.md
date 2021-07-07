@@ -45,8 +45,9 @@ efficiencies.
 
 ### Part Two
 
-1. Now, run `SortTimingHybrid` to determine the size at which insertion sort
-becomes less efficient than quicksort.
+1. Now, run `SortTimingHybrid` using `./gradlew runTwo` (or `gradlew.bat runTwo`
+on DOS-based terminals) to determine the size at which insertion sort becomes
+less efficient than quicksort.
 
    Note that you will likely not conclude the same size as your classmates;
    these results can be affected by your machine, operating system, Java
