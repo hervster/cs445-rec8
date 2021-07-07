@@ -1,6 +1,11 @@
 package cs445.rec8;
 
+import java.util.Random;
+
 public class Sorting {
+
+    // Random number generator for shuffling
+    private static Random rand = new Random();
 
     /**
      * basic swap method
@@ -128,6 +133,7 @@ public class Sorting {
         // TODO: implement the hybridQuickSort approach with the baseCase given
         // as an argument
     }
+
     /**
      * hybrid quicksort method
      * @param a, the array to be sorted
@@ -139,6 +145,7 @@ public class Sorting {
         // TODO: implement this method such that
         // it accepts a base case size as an argument
     }
+
     /**
      * quicksort partition method.
      * @param a, the array to be partitioned
@@ -174,6 +181,27 @@ public class Sorting {
         pivotIndex = lo;
 
         return pivotIndex;
+    }
+
+    /**
+     * generate an int array with values 0 to cap
+     */
+    public static Integer[] buildArray(int cap) {
+        Integer[] result = new Integer[cap];
+        for (int i = 0; i < cap; i++) {
+            result[i] = i;
+        }
+        return result;
+    }
+
+    /**
+     * Shuffle an array to a random permutation using the Fisher-Yates shuffle
+     */
+    public static <T> void shuffle(T[] a) {
+        for (int i = 0; i < a.length; i++) {
+            int r = rand.nextInt(i+1);
+            Sorting.swap(a, i, r);
+        }
     }
 
 }

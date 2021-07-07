@@ -9,14 +9,8 @@ import cs445.rec8.Sorting;
 
 public class SortTest{
 
-
 	Integer[] a;
     final String sep = ",";
-
-	@BeforeEach
-	public void setup(){
-		Integer[] a;
-	}
 
 	@AfterEach
 	public void teardown(){
@@ -33,9 +27,9 @@ public class SortTest{
 		int baseCase = 20;
 
 		for (int i = minSize; i <= maxSize; i+=step) {
-			a = Helper.buildArray(i);
+			a = Sorting.buildArray(i);
 
-			Helper.shuffle(a);
+			Sorting.shuffle(a);
 			Sorting.hybridQuickSort(a, baseCase);
 			assert Helper.isSorted(a);
 		}

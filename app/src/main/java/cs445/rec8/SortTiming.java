@@ -1,11 +1,7 @@
 package cs445.rec8;
 
-import java.util.Random;
-
 public class SortTiming {
 
-    // Random number generator for shuffling
-    private static Random rand = new Random();
     // Static array that will be reused through all tests
     private static Integer[] a;
 
@@ -30,7 +26,7 @@ public class SortTiming {
         // Run a bunch of stuff before recording, to enable the JVM
         // optimizations to take effect
         //
-        a = buildArray(100);
+        a = Sorting.buildArray(100);
         for (int i = 0; i < 100; i++) {
             timeBubbleSort(numTrials);
             // TODO: Uncomment once implemented
@@ -44,7 +40,7 @@ public class SortTiming {
 
         // test each size with shuffled array
         for (int size = minSize; size <= maxSize; size += step) {
-            a = buildArray(size);
+            a = Sorting.buildArray(size);
             // print the current size
             System.out.print(size + sep);
             // print the time for bubble sort
@@ -69,7 +65,7 @@ public class SortTiming {
         // repeat the test for the specified number of trials
         for (int trial = 0; trial < numTrials; trial++) {
             // shuffle the array
-            shuffle(a);
+            Sorting.shuffle(a);
             // determine the time right before calling bubble sort
             long start = System.nanoTime();
             // call bubble sort
@@ -89,7 +85,7 @@ public class SortTiming {
         // repeat the test for the specified number of trials
         for (int trial = 0; trial < numTrials; trial++) {
             // shuffle the array
-            shuffle(a);
+            Sorting.shuffle(a);
             // determine the time right before calling selection sort
             long start = System.nanoTime();
             // call selection sort
@@ -109,7 +105,7 @@ public class SortTiming {
         // repeat the test for the specified number of trials
         for (int trial = 0; trial < numTrials; trial++) {
             // shuffle the array
-            shuffle(a);
+            Sorting.shuffle(a);
             // determine the time right before calling insertion sort
             long start = System.nanoTime();
             // call insertion sort
@@ -129,7 +125,7 @@ public class SortTiming {
         // repeat the test for the specified number of trials
         for (int trial = 0; trial < numTrials; trial++) {
             // shuffle the array
-            shuffle(a);
+            Sorting.shuffle(a);
             // determine the time right before calling shellsort
             long start = System.nanoTime();
             // call shellsort
@@ -139,27 +135,6 @@ public class SortTiming {
         }
         // return the average per trial
         return time/numTrials;
-    }
-
-    /**
-     * generate an Integer array with values 0 to cap
-     */
-    public static Integer[] buildArray(int cap) {
-        Integer[] result = new Integer[cap];
-        for (int i = 0; i < cap; i++) {
-            result[i] = i;
-        }
-        return result;
-    }
-
-    /**
-     * Shuffle an array to a random permutation using the Fisher-Yates shuffle
-     */
-    public static <T> void shuffle(T[] a) {
-        for (int i = 0; i < a.length; i++) {
-            int r = rand.nextInt(i+1);
-            Sorting.swap(a, i, r);
-        }
     }
 
 }
