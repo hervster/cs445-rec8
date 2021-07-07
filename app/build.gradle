@@ -1,0 +1,45 @@
+plugins {
+    // Apply the application plugin to add support for building a CLI application in Java.
+    id 'application'
+}
+
+repositories {
+    // Use mavenCentral for resolving dependencies. (JCenter deprecated in 8.0)
+    mavenCentral()
+}
+
+dependencies {
+    // Use JUnit Jupiter API for testing.
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.2'
+
+    // Use JUnit Jupiter Engine for testing.
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+}
+
+application {
+    // Define the main class for the application.
+    mainClass = 'cs445.rec8.SortTiming'
+}
+
+tasks.named('test') {
+    // Use junit platform for unit tests
+    useJUnitPlatform()
+}
+
+tasks.named('run') {
+    // set to use System.in for Scanner to function in Client
+    standardInput = System.in
+}
+// Task for Part One
+task(runOne, type: JavaExec) {
+	mainClass = 'cs445.rec8.SortTiming'
+	classpath = sourceSets.main.runtimeClasspath
+}
+
+// Task for Part Two
+task(runTwo, type: JavaExec) {
+	// Note that this part uses a main class in a package
+	mainClass = 'cs445.rec8.SortTiming_hybrid'
+	classpath = sourceSets.main.runtimeClasspath
+}
+
