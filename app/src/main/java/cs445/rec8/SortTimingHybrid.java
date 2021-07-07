@@ -12,11 +12,11 @@ public class SortTimingHybrid {
         // number of trials to average for each test
         int numTrials = 1000;
         // min array size
-        int minSize = 20;
+        int minSize = 5;
         // max array size
-        int maxSize = 2000;
+        int maxSize = 200;
         // step size when increasing array size
-        int step = 10;
+        int step = 1;
         // base case for hybridQuickSort()
         int baseCase = 1;
 
