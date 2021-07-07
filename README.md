@@ -34,6 +34,7 @@ DOS-based terminals), and direct the output of the program to a text file with a
 as Excel, enabling you to plot graphs for your results later.
 
    Use a command such as:
+
        ./gradlew runOne > data.csv
 
 2. Plot the time result for the four sorting algorithms, and notice the relative
