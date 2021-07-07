@@ -49,7 +49,7 @@ public class SortTimingHybrid {
             // print the time for original quick sort
             System.out.print(timeQuickSort(numTrials) + sep);
             // print the time for modified quick sort with insertion sort for small sizes
-            //System.out.print(timeHybridQuicksort(numTrials, baseCase) + sep);
+            //System.out.print(timeHybridQuicksort(numTrials, baseCase));
             // end the line
             System.out.println("");
         }
