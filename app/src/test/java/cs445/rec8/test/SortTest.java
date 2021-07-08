@@ -18,7 +18,7 @@ public class SortTest{
 
     @Test
     @DisplayName("Test QuickSortHybrid")
-    void testQuicksort_Hybrid(){
+    void testQuicksortHybrid(){
 
         int minSize = 100;
         int maxSize = 5000;
