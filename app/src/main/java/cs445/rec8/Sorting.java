@@ -132,6 +132,9 @@ public class Sorting {
     void hybridQuickSort(T[] a, int baseCase) {
         // TODO: implement the hybridQuickSort approach with the baseCase given
         // as an argument
+
+        hybridQuickSort(a, baseCase, 0, a.length);
+        insertionSort(a);
     }
 
     /**
@@ -144,6 +147,10 @@ public class Sorting {
     {
         // TODO: implement this method such that
         // it accepts a base case size as an argument
+        if (end - start > baseCase){
+            int pivotIndex = partition(a, start, end);
+            hybridQuickSort(a, baseCase, start, pivotIndex);
+            hybridQuickSort(a, baseCase, pivotIndex+1, end);
     }
 
     /**

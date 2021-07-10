@@ -83,7 +83,20 @@ public class SortTimingHybrid {
      */
     public static long timeHybridQuicksort(int numTrials, int baseCase) {
         // TODO: Implement this method to utilize insertionSort/quickSort hybrid with some baseCase for switching
-        return 0;
+        long time = 0;
+
+        for (int trial = 0; trial < numTrials; trial++) {
+            // shuffle the array
+            Sorting.shuffle(a);
+            // determine the time right before calling insertion sort
+            long start = System.nanoTime();
+            // call insertionSort
+            Sorting.hybridQuickSort(a, baseCase);
+            // determine the time that's elapsed
+            time += System.nanoTime() - start;
+        }
+        // return the average per trial
+        return time/numTrials;
     }
 
     /**
